@@ -1,22 +1,26 @@
 @import '../../styles/variables.scss';
 
 .app-navbar {
-    width: 100%;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
     transition: transform 0.3s ease-in-out;
-
+    z-index: 1;
     .ul-menu {
         flex: 1;
         display: flex;
-        justify-content: center;
-        align-items: center;
+
         list-style: none;
 
         .ul-li {
             margin: 0px 16px;
             cursor: pointer;
+            font-size: 25px;
 
             .li-link {
-                color: white;
+                color: rgb(255, 255, 255);
                 text-decoration: none;
 
                 transition: 0.5s ease;
