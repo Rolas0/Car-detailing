@@ -1,0 +1,193 @@
+@import '../../styles/variables.scss';
+
+.prices {
+    background-image: url(../../assets/images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: fit-content;
+    position: relative;
+
+    @include breakpoint(tablet) {
+    }
+    .prices-titel-div {
+        height: 450px;
+        border-bottom: #ff0000 solid 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            color: #ffffff;
+            font-size: 90px;
+            @include breakpoint(tablet) {
+                font-size: 50px;
+            }
+        }
+    }
+    .prices-div {
+        width: 100%;
+        height: fit-content;
+
+        .prices-form-div {
+            position: fixed;
+            top: 2%;
+            left: 30%;
+            z-index: 10;
+
+            @include breakpoint(tablet) {
+                top: 0%;
+                left: 2%;
+            }
+        }
+
+        .price-polishing-div,
+        .price-interiot-div,
+        .price-body-div {
+            display: flex;
+            height: fit-content;
+            width: 100%;
+
+            @include breakpoint(tablet) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .service-polishing-div {
+                background-image: url(../../assets/images/car-polish-logo.png);
+            }
+
+            .service-interior-div {
+                background-image: url(../../assets/images/interior-cleaning.jpeg);
+                // background-image: url(../../assets/images/bekgroundas.jpg);
+            }
+
+            .service-body-div {
+                background-image: url(../../assets/images/body-repair-logo.png);
+            }
+            .service-headlight-div {
+                background-image: url(../../assets/images/headlight1.jpg);
+            }
+        }
+
+        .service-info-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex: 1;
+            padding: 90px;
+            background-size: cover;
+            color: #ffffff;
+            width: 50%;
+            border-bottom: solid 3px #ff0000;
+
+            @include breakpoint(tablet) {
+                width: 100%;
+                padding: 10px 30px 10px 30px;
+            }
+
+            h2,
+            p,
+            h3,
+            .form-div-button {
+                width: 60%;
+
+                @include breakpoint(tablet) {
+                    width: 100%;
+                    font-size: 16px;
+                }
+            }
+
+            h2 {
+                @include breakpoint(tablet) {
+                    font-size: 25px;
+                }
+            }
+            .form-div-button {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                // z-index: 1;
+                h3 {
+                    width: 220px;
+                    font-size: 25px;
+                }
+
+                // @include breakpoint(tablet) {
+                //     padding: 10px;
+                // }
+
+                .form-button {
+                    color: #ffff;
+                    position: relative;
+                    font-size: 20px;
+                    border: 2px solid #ed4747;
+                    background: #ed4747;
+                    // background: none;
+                    height: 60px;
+                    width: 240px;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+        .prices-info-div {
+            background-color: #ffffff;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            gap: 20px;
+            border-bottom: solid 3px #ff0000;
+
+            .prices-info-div-two {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .more {
+                    color: red;
+                    cursor: pointer;
+                }
+                ul {
+                    list-style: none;
+                    font-size: 16px;
+                    color: #363434;
+
+                    li {
+                        padding: 5px;
+                    }
+                }
+
+                ul li::before {
+                    content: '\2022';
+                    color: #ed4747;
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 1em;
+                    margin-left: -1em;
+                }
+
+                .prices-info-div-two-inner {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+
+            @include breakpoint(tablet) {
+                width: 100%;
+                padding: 20px;
+                height: fit-content;
+            }
+        }
+    }
+}

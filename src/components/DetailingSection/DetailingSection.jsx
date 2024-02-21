@@ -1,7 +1,13 @@
-import ContactForm from '../Forms/ContactForm/ContactForm';
+import { useState } from 'react';
+// import ContactForm from '../Forms/ContactForm/ContactForm';
 import './DetailingSection.scss';
 
 function DetailingSection() {
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
+    function handleFormDivClick() {
+        setIsFormOpen(!isFormOpen);
+    }
     return (
         <div className="detailing-container">
             <div className="detailing-cont-info">
@@ -17,8 +23,17 @@ function DetailingSection() {
                         automobilių detalizavimo paslaugas
                     </p>
                 </div>
+                <button
+                    className="form-div-button"
+                    onClick={handleFormDivClick}
+                >
+                    Noriu paslaugos
+                </button>
             </div>
-            <ContactForm />
+
+            {/* <div className="detailing-container-form-div">
+                {isFormOpen && <ContactForm buttonClose={handleFormDivClick} />}{' '}
+            </div> */}
         </div>
     );
 }

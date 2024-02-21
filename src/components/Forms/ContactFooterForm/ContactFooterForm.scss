@@ -1,0 +1,93 @@
+@import '../../../styles/variables.scss';
+
+.footer-form-div {
+    height: fit-content;
+    width: 531px;
+    padding: 0px;
+    @include breakpoint(tablet) {
+        width: 360px;
+
+        
+    }
+
+    .footer-contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include breakpoint(tablet) {
+            align-items: center;
+
+            h3 {
+                font-size: 25px;
+            }
+        }
+
+        .footer-form-button-div {
+            .footer-form-button {
+                color: #ffff;
+                position: relative;
+                font-size: 20px;
+                border: 2px solid #ed4747;
+                background: #ed4747;
+                height: 60px;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+        .footer-form-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .footer-form-select {
+                background: none;
+                border: none;
+                box-shadow: 0px -2px 0px 0px #ed4747 inset;
+                height: 48px;
+                font-size: 16px;
+                color: #ffff;
+                background-color: #000000;
+
+                @include breakpoint(tablet) {
+                    .footer-form-options {
+                    }
+                }
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+
+            .form-field {
+                height: 45px;
+                width: 526px;
+                background: none;
+                border-style: none;
+                -webkit-appearance: none;
+                color: #f5f5f5;
+                box-shadow: 0px -2px 0px 0px #ed4747 inset;
+
+                @include breakpoint(tablet) {
+                    width: 360px;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        textarea {
+            background: none;
+            border-style: none;
+            box-shadow: 0px -2px 0px 0px #ed4747 inset;
+            max-width: 531px;
+            color: #ffff;
+
+            @include breakpoint(tablet) {
+                width: 100%;
+            }
+        }
+    }
+}

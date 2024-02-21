@@ -1,0 +1,66 @@
+@import '../../styles/variables.scss';
+
+.footer {
+    height: 250px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+
+    @include breakpoint(tablet) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .footer-div-one {
+        .footer-logo {
+            width: 300px;
+            height: 200px;
+        }
+
+        @include breakpoint(tablet) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .footer-div-two {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .info {
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        p {
+            padding-left: 20px;
+        }
+    }
+
+    .footer-div-three {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .copyr {
+        align-self: flex-end;
+    }
+
+    .footer-about-div {
+        width: 400px;
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+}

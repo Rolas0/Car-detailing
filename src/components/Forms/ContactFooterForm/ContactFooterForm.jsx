@@ -1,8 +1,8 @@
-import './ContactForm.scss';
+import './ContactFooterForm.scss';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-function ContactForm({ buttonClose, option, optionValue }) {
+function ContactFooterForm() {
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -21,101 +21,105 @@ function ContactForm({ buttonClose, option, optionValue }) {
                 }
             );
     };
+
     return (
         <>
-            <div className="form-div">
-                <div className="close-button-div">
-                    <button onClick={buttonClose} className="close-button">
-                        X
-                    </button>
-                </div>
-                <form ref={form} onSubmit={sendEmail} className="contact-form">
+            <div className="footer-form-div">
+                <form
+                    ref={form}
+                    onSubmit={sendEmail}
+                    className="footer-contact-form"
+                >
                     <h3>Palikite Kontaktus</h3>
 
-                    <div className="form-group">
-                        <label>Vardas *</label>
+                    <div className="footer-form-group">
                         <input
+                            className="form-field"
+                            placeholder="Vardas*"
                             name="user_name"
-                            placeholder="Vardas"
                             type="text"
                         />
                     </div>
 
-                    <div className="form-group">
-                        <label>El. Paštas *</label>
+                    <div className="footer-form-group">
                         <input
+                            className="form-field"
+                            placeholder="El. Paštas*"
                             name="user_email"
-                            placeholder="El. Paštas"
                             type="email"
                         />
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="">Telefono numeris *</label>
+                    <div className="footer-form-group">
                         <input
+                            className="form-field"
+                            placeholder="Telefono numeris*"
                             name="user_phone"
-                            placeholder="Telefono numeris"
                             type="number"
                         />
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="">Automobilio markė *</label>
+                    <div className="footer-form-group">
                         <input
+                            className="form-field"
+                            placeholder="Automobilio markė*"
                             name="user_car"
-                            placeholder="Automobilio markė"
                             type="text"
                         />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="">Automobilio modelis *</label>
+                    <div className="footer-form-group">
                         <input
+                            className="form-field"
+                            placeholder="Automobilio modelis*"
                             name="user_carModel"
-                            placeholder="Automobilio modelis"
                             type="text"
                         />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="">Paslauga *</label>
+                    <div className="footer-form-group">
                         <select
-                            className="form-select"
+                            className="footer-form-select"
                             name="user_option"
                             id=""
                         >
-                            {/* <option
-                                className="option-placeholder"
+                            <option
+                                className="footer-option-placeholder"
                                 value=""
                                 disabled
                                 selected
                                 hidden
                             >
                                 Pasirinkite Paslaugą
-                            </option> */}
-                            <option
-                                className="form-options"
-                                value={optionValue}
-                                name="user_option"
-                            >
-                                {option}
                             </option>
-                            {/* <option className="form-options" value="">
+                            <option
+                                name="user_option"
+                                className="footer-form-options"
+                                value="Salono valymas"
+                            >
+                                Salono valymas
+                            </option>
+                            <option
+                                name="user_option"
+                                className="footer-form-options"
+                                value="Kėbulo atnaujinimas"
+                            >
                                 Kėbulo atnaujinimas
-                            </option> */}
+                            </option>
                         </select>
                     </div>
 
                     <textarea
-                        placeholder="Jusu komentaras"
+                        className="form-field"
+                        placeholder="Jūsų komentaras*"
                         name="message"
                         id=""
                         cols="30"
                         rows="3"
                     ></textarea>
-                    <div className="form-button-div">
+                    <div className="footer-form-button-div">
                         <button
                             type="submit"
                             value="Send"
-                            className="form-button"
+                            className="footer-form-button"
                         >
                             {' '}
                             Pateikti uzklausa
@@ -126,4 +130,4 @@ function ContactForm({ buttonClose, option, optionValue }) {
         </>
     );
 }
-export default ContactForm;
+export default ContactFooterForm;

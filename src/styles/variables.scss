@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;600&display=swap');
+
 $roboto-font: 'Roboto', sans-serif;
+$font-manrope: 'Manrope', sans-serif;
 $title-font: 'Kdam Thmor Pro', sans-serif;
+$font-mont: 'Montserrat', sans-serif;
+$font-mono: 'Roboto Mono', monospace;
+$font-services: 'Play', sans-serif;
 
 $bg: rgb(255, 255, 255);
 $bg2: rgb(0, 0, 0);
@@ -18,7 +26,7 @@ $header-hight: 150px;
 $mobile: 480px;
 $tablet: 768px;
 $desktop: 1024px;
-$xl: 1200px;
+$xl: 1800px;
 
 @mixin breakpoint($breakpoint) {
     @if $breakpoint == mobile {
@@ -31,6 +39,10 @@ $xl: 1200px;
         }
     } @else if $breakpoint == desktop {
         @media (max-width: #{$desktop}) {
+            @content;
+        }
+    } @else if $breakpoint == xl {
+        @media (max-width: #{$xl}) {
             @content;
         }
     }

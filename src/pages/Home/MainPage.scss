@@ -3,19 +3,53 @@
 .main-page {
     width: 100%;
     height: fit-content;
-
     display: flex;
+    position: relative;
     flex-direction: column;
-
     background-image: url(../../assets/images/bg1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+   
 
     .content-container {
         width: 100%;
         height: 100vh;
         height: fit-content;
+        border-bottom: 4px solid #ed4747;
+        padding-bottom: 30px;
     }
+
+    .about-contaienr {
+        height: 550px;
+        border-bottom: 4px solid #ed4747;
+        padding: 0px;
+        width: 100%;
+        background-image: url(../../assets/images/about-background.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+
+        @include breakpoint(tablet) {
+            height: fit-content;
+        }
+    }
+    .services-contaienr {
+        height: fit-content;
+        border-bottom: 4px solid #ed4747;
+        padding: 0px;
+        width: 100%;
+        // background-color: #212121;
+    }
+}
+.footer-contaienr {
+    height: fit-content;
+    width: 100%;
+    background-image: url(../../assets/images/JED_GROUP_fonas_page-0001.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
 }

@@ -1,0 +1,221 @@
+@import '../../styles/variables.scss';
+
+.services-section {
+    display: flex;
+    padding: 80px;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    height: 650px;
+    gap: 20px;
+
+    @include breakpoint(mobile) {
+        height: fit-content;
+        gap: 5px;
+    }
+    @include breakpoint(tablet) {
+        height: fit-content;
+        gap: 5px;
+        padding: 32px 20px;
+    }
+
+    .detailing-container-form-div {
+        position: absolute;
+        z-index: 3;
+        left: 45%;
+
+        @include breakpoint(desktop) {
+            left: 100px;
+            top: 0px;
+        }
+        @include breakpoint(tablet) {
+            left: 100px;
+            top: 0px;
+        }
+        @include breakpoint(mobile) {
+            left: 5px;
+            top: 0px;
+            width: 375px;
+        }
+    }
+}
+
+.h1-services-title {
+    font-size: 70px;
+    font-family: $font-services;
+    padding: 0px;
+    color: white;
+}
+
+.all-services-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+
+    @include breakpoint(desktop) {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    @include breakpoint(tablet) {
+        flex-direction: column;
+        gap: 10px;
+    }
+    @include breakpoint(mobile) {
+        gap: 10px;
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        width: 375px;
+        height: 375px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        border: 4px solid #ed4747;
+        position: relative;
+        justify-content: center;
+        gap: 40px;
+        z-index: 1;
+
+        @include breakpoint(desktop) {
+            height: 320px;
+            width: 100%;
+            gap: 5px;
+            p {
+                display: none;
+            }
+        }
+
+        @include breakpoint(tablet) {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ed4747;
+            gap: 6px;
+
+            .img-icon-one {
+                width: 100px;
+                height: 80px;
+            }
+
+            .img-icon-three {
+                width: 100px;
+                height: 90px;
+            }
+            p {
+                display: none;
+            }
+        }
+
+        .service-button-div {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s, height 0.3s;
+            @include breakpoint(tablet) {
+                opacity: 1;
+                height: auto;
+            }
+
+            .service-button {
+                color: #ffff;
+                position: relative;
+                font-size: 20px;
+                border: 2px solid #ffff;
+                background: none;
+                height: 60px;
+                width: 240px;
+                cursor: pointer;
+
+                @include breakpoint(tablet) {
+                    border: 3px solid #ed4747;
+                }
+                &:hover {
+                    color: #ed4747;
+                }
+
+                &::before {
+                    background: #ffff;
+                    content: '';
+                    inset: 0;
+                    position: absolute;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform 0.2s ease-in-out;
+                    z-index: -1;
+                }
+
+                &:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+            }
+        }
+
+        &:hover {
+            .service-button-div {
+                opacity: 1;
+                height: auto;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                background-color: #ed4747;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0.5;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .service-icon-div,
+            .service-text-div {
+                transform: translateY(-10px);
+                transition: transform 0.3s;
+            }
+        }
+
+        .service-icon-div {
+            width: auto;
+            height: fit-content;
+
+            .img-icon-one {
+                width: 120px;
+                height: 90px;
+            }
+            .img-icon-two {
+                width: 100px;
+                height: 100px;
+                @include breakpoint(tablet) {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            .img-icon-three {
+                width: 130px;
+                height: 100px;
+            }
+        }
+    }
+
+    .card-polish {
+        background-image: url(../../assets/images/car-polish-logo.png);
+    }
+
+    .interior-cleaning {
+        background-image: url(../../assets/images/interior-cleaning.jpeg);
+    }
+    .body-repair {
+        background-image: url(../../assets/images/body-repair-logo.png);
+    }
+}
