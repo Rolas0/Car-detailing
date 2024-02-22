@@ -12,7 +12,7 @@
         .contact-title-div {
             height: 450px;
             display: flex;
-            align-items: end;
+            align-items: flex-end;
             justify-content: center;
 
             @include breakpoint(tablet) {
@@ -48,6 +48,8 @@
             align-items: center;
             justify-content: center;
             height: fit-content;
+            width: 100%;
+            overflow: hidden;
 
             @include breakpoint(tablet) {
                 flex-direction: column;

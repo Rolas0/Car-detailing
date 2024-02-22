@@ -1,6 +1,5 @@
 import Navbar from '../navbar/Navbar';
 import logo from '../../assets/images/auto-logo-without-bg.png';
-import logo1 from '../../assets/images/auto-logo.jpg';
 import './Header.scss';
 import { useState } from 'react';
 import { BiMenuAltRight } from 'react-icons/bi';

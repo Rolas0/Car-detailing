@@ -6,8 +6,11 @@
     padding: 0px;
     @include breakpoint(tablet) {
         width: 360px;
+    }
 
-        
+    @include breakpoint(desktop) {
+        width: 440px;
+        height: fit-content;
     }
 
     .footer-contact-form {

@@ -1,9 +1,26 @@
 import './ContactFooterForm.scss';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 function ContactFooterForm() {
     const form = useRef();
+
+    const [formData, setFormData] = useState({
+        user_name: '',
+        user_email: '',
+        user_phone: '',
+        user_car: '',
+        user_carModel: '',
+        message: '',
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -20,6 +37,15 @@ function ContactFooterForm() {
                     console.log('FAILED...', error.text);
                 }
             );
+
+        setFormData({
+            user_name: '',
+            user_email: '',
+            user_phone: '',
+            user_car: '',
+            user_carModel: '',
+            message: '',
+        });
     };
 
     return (
@@ -34,6 +60,8 @@ function ContactFooterForm() {
 
                     <div className="footer-form-group">
                         <input
+                            value={formData.user_name}
+                            onChange={handleChange}
                             className="form-field"
                             placeholder="Vardas*"
                             name="user_name"
@@ -44,6 +72,8 @@ function ContactFooterForm() {
                     <div className="footer-form-group">
                         <input
                             className="form-field"
+                            value={formData.user_email}
+                            onChange={handleChange}
                             placeholder="El. Paštas*"
                             name="user_email"
                             type="email"
@@ -52,6 +82,8 @@ function ContactFooterForm() {
 
                     <div className="footer-form-group">
                         <input
+                            value={formData.user_phone}
+                            onChange={handleChange}
                             className="form-field"
                             placeholder="Telefono numeris*"
                             name="user_phone"
@@ -61,6 +93,8 @@ function ContactFooterForm() {
 
                     <div className="footer-form-group">
                         <input
+                            value={formData.user_car}
+                            onChange={handleChange}
                             className="form-field"
                             placeholder="Automobilio markė*"
                             name="user_car"
@@ -69,6 +103,8 @@ function ContactFooterForm() {
                     </div>
                     <div className="footer-form-group">
                         <input
+                            value={formData.user_carModel}
+                            onChange={handleChange}
                             className="form-field"
                             placeholder="Automobilio modelis*"
                             name="user_carModel"
@@ -108,6 +144,8 @@ function ContactFooterForm() {
                     </div>
 
                     <textarea
+                        value={formData.message}
+                        onChange={handleChange}
                         className="form-field"
                         placeholder="Jūsų komentaras*"
                         name="message"

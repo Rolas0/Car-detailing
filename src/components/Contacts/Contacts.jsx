@@ -36,7 +36,7 @@ function Contacts() {
                             <FaPhoneAlt color="#ed4747" size="25px" />
                             <div className="contact-info-inside-div">
                                 <h3>Telefono numeris</h3>
-                                <p> +37000000000</p>
+                                <p>+37069922227</p>
                             </div>
                         </div>
 
@@ -44,7 +44,7 @@ function Contacts() {
                             <CiMail color="#ed4747" size="30px" />
                             <div className="contact-info-inside-div">
                                 <h3>Mūsų El. paštas</h3>
-                                <p>edvin.kondratovic@gmail.com</p>
+                                <p>info@jedgroup.lt</p>
                             </div>
                         </div>
                     </div>

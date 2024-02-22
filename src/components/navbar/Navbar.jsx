@@ -15,11 +15,7 @@ function Navbar({ isMobileMenuOpen }) {
                         Pradžia
                     </NavLink>
                 </li>
-                <li className="ul-li">
-                    <NavLink to="/" className="li-link">
-                        Paslaugos
-                    </NavLink>
-                </li>
+
                 <li className="ul-li">
                     <NavLink to="/prices" className="li-link">
                         Kainos

@@ -21,20 +21,20 @@ function Footer() {
                     <h2>Kontaktai</h2>
                 </div>
                 <div className="adress-div info">
-                    <IoLocationOutline size="30px" />
+                    <IoLocationOutline color="#ed4747" size="30px" />
                     <p>
                         Lithuania <br /> Vilnius
                     </p>
                 </div>
 
                 <div className="phone-div info">
-                    <FaPhoneAlt size="25px" />
-                    <p> +37000000000</p>
+                    <FaPhoneAlt color="#ed4747" size="25px" />
+                    <p>+37069922227</p>
                 </div>
 
                 <div className="gmail-div info">
-                    <CiMail size="30px" />
-                    <p>edvin.kondratovic@gmail.com</p>
+                    <CiMail color="#ed4747" size="30px" />
+                    <p>info@jedgroup.lt</p>
                 </div>
             </div>
 
@@ -49,7 +49,9 @@ function Footer() {
                     </p>
                 </div>
                 <p className="copyr">
-                    Copyrights &copy; 2023 | JED Group All rights reserved.{' '}
+                    Copyrights <span className="copyright-icon">&copy;</span>{' '}
+                    2023 <span className="copyright-icon">|</span> JED Group All
+                    rights reserved.{' '}
                 </p>
             </div>
         </div>

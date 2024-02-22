@@ -13,6 +13,11 @@
         align-items: center;
         height: auto;
     }
+    @include breakpoint(desktop) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
 
     .footer-div-one {
         .footer-logo {
@@ -21,6 +26,12 @@
         }
 
         @include breakpoint(tablet) {
+            width: 100%;
+            height: auto;
+        }
+        @include breakpoint(desktop) {
+            display: flex;
+            justify-content: center;
             width: 100%;
             height: auto;
         }
@@ -54,12 +65,19 @@
 
     .copyr {
         align-self: flex-end;
+
+        .copyright-icon {
+            color: #ed4747;
+        }
     }
 
     .footer-about-div {
         width: 400px;
 
         @include breakpoint(tablet) {
+            display: none;
+        }
+        @include breakpoint(desktop) {
             display: none;
         }
     }

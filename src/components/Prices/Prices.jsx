@@ -4,8 +4,19 @@ import './Prices.scss';
 import { useState } from 'react';
 import ContactForm from '../Forms/ContactForm/ContactForm.jsx';
 function Prices() {
-    const [isFormOpen, setIsFormOpen] = useState(false);
-    const [isMoreOpen, setIsMoreOpen] = useState(false);
+    const [isFormOpenOne, setIsFormOpenOne] = useState(false);
+    const [isFormOpenTwo, setIsFormOpenTwo] = useState(false);
+    const [isFormOpenThree, setIsFormOpenThree] = useState(false);
+
+    function handleFormDivClickOne() {
+        setIsFormOpenOne(!isFormOpenOne);
+    }
+    function handleFormDivClickTwo() {
+        setIsFormOpenTwo(!isFormOpenTwo);
+    }
+    function handleFormDivClickThree() {
+        setIsFormOpenThree(!isFormOpenThree);
+    }
     const [openSections, setOpenSections] = useState({
         oneTwoLevelCarPolish: false,
         twoThreeLevel: false,
@@ -18,10 +29,6 @@ function Prices() {
         bodyRepair: false,
         headlightPolishing: false,
     });
-
-    function handleFormDivClick() {
-        setIsFormOpen(!isFormOpen);
-    }
 
     function handleSectionToggle(sectionKey) {
         setOpenSections((prevState) => ({
@@ -37,16 +44,35 @@ function Prices() {
 
                 <div className="prices-div">
                     <div className="prices-form-div">
-                        {isFormOpen && (
-                            <ContactForm buttonClose={handleFormDivClick} />
+                        {isFormOpenOne && (
+                            <ContactForm
+                                option={'Automobilio poliravimas'}
+                                optionValue={'Automobilio poliravimas'}
+                                buttonClose={handleFormDivClickOne}
+                            />
+                        )}
+                    </div>
+                    <div className="prices-form-div">
+                        {isFormOpenTwo && (
+                            <ContactForm
+                                option={'Žibintų poliravimo'}
+                                optionValue={'Žibintų poliravimo'}
+                                buttonClose={handleFormDivClickTwo}
+                            />
+                        )}
+                    </div>
+                    <div className="prices-form-div">
+                        {isFormOpenThree && (
+                            <ContactForm
+                                option={'Cheminis valymas'}
+                                optionValue={'Cheminis valymas'}
+                                buttonClose={handleFormDivClickThree}
+                            />
                         )}
                     </div>
                     <div className="price-polishing-div ">
                         <div className="service-info-div service-polishing-div">
-                            <h2>
-                                Kėbulo poliravimo bei žibintų poliravimo
-                                paslauga
-                            </h2>
+                            <h2>Kėbulo poliravimo paslauga</h2>
                             <p>
                                 Poliravimo metu atgaivinama spalva, pašalinami
                                 vidutiniai ir gilūs įbrėžimai, jis skirtas
@@ -56,7 +82,7 @@ function Prices() {
                             <div className="form-div-button">
                                 <h3>Rezervacija</h3>
                                 <button
-                                    onClick={handleFormDivClick}
+                                    onClick={handleFormDivClickOne}
                                     className="form-button"
                                 >
                                     Spausti čia
@@ -221,7 +247,7 @@ function Prices() {
                             <div className="form-div-button">
                                 <h3>Rezervacija</h3>
                                 <button
-                                    onClick={handleFormDivClick}
+                                    onClick={handleFormDivClickTwo}
                                     className="form-button"
                                 >
                                     Spausti čia
@@ -266,15 +292,22 @@ function Prices() {
                         <div className="service-info-div service-interior-div">
                             <h2>Cheminis sausa salono valymas</h2>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit..Lorem ipsum dolor, sit amet
-                                consectetur adipisicing elit..Lorem ipsum dolor,
-                                sit amet consectetur adipisicing elit..
+                                Salono cheminis valymas yra profesionali
+                                paslauga, skirta automobilio vidaus valymui ir
+                                atnaujinimui naudojant specialius cheminius
+                                produktus ir įrangą. Proceso metu valomos
+                                sėdynės, kilimėliai, dangos, lubos ir kitos
+                                paviršiai, siekiant pašalinti dėmes, kvapus,
+                                dulkes ir kitus nešvarumus. Cheminis valymas ne
+                                tik suteikia automobiliui švarą ir šviežumą, bet
+                                ir gali pagerinti vidaus orą bei išvaizdą. Tai
+                                puikus būdas palaikyti automobilio vertę ir
+                                patogumą kelionėse.
                             </p>
                             <div className="form-div-button">
                                 <h3>Rezervacija </h3>
                                 <button
-                                    onClick={handleFormDivClick}
+                                    onClick={handleFormDivClickThree}
                                     className="form-button"
                                 >
                                     Spausti čia
@@ -394,48 +427,6 @@ function Prices() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Kebulo remontas */}
-                    {/* <div className="price-body-div">
-                        <div className="service-info-div service-body-div">
-                            <h2>Kėbulo remonto paslaugos</h2>
-                            <p>
-                                Poliravimo metu atgaivinama spalva, pašalinami
-                                vidutiniai ir gilūs įbrėžimai, jis skirtas
-                                maksimaliai atstatyti automobilio kėbulo
-                                išvaizdą.
-                            </p>
-
-                            <div className="form-div-button">
-                                <h3>Rezervacija</h3>
-                                <button
-                                    onClick={handleFormDivClick}
-                                    className="form-button"
-                                >
-                                    Spausti čia
-                                </button>
-                            </div>
-                        </div>
-                        <div className="prices-info-div">
-                            <div className="prices-info-div-two">
-                                <h2>Plačiau apie paslagą</h2>
-                                <ul>
-                                    <li>Lengvų įbrėžimų pašalinimas</li>
-                                    <li>Suteikiamas automobiliui blizgesys</li>
-                                    <li>Žibintų poliravimas</li>
-                                </ul>
-                            </div>
-
-                            <div className="prices-info-div-two">
-                                <h2>Kainos</h2>
-                                <ul>
-                                    <li>1000eru Lengvasis auto</li>
-                                    <li>2000eur visuregis</li>
-                                    <li>3000eur mikroautobusas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
             <footer className="footer-contaienr" id="contacts">

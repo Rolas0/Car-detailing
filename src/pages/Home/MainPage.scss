@@ -11,7 +11,12 @@
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-   
+    overflow: hidden;
+
+    @include breakpoint(desktop) {
+        width: fit-content;
+        height: fit-content;
+    }
 
     .content-container {
         width: 100%;
@@ -19,6 +24,10 @@
         height: fit-content;
         border-bottom: 4px solid #ed4747;
         padding-bottom: 30px;
+
+        @include breakpoint(desktop) {
+            width: fit-content;
+        }
     }
 
     .about-contaienr {
@@ -41,7 +50,6 @@
         border-bottom: 4px solid #ed4747;
         padding: 0px;
         width: 100%;
-        // background-color: #212121;
     }
 }
 .footer-contaienr {
@@ -52,4 +60,9 @@
     background-position: center;
     background-attachment: fixed;
     padding: 20px;
+    overflow: hidden;
+
+    @include breakpoint(desktop) {
+        width: 100%;
+    }
 }
